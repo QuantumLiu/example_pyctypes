@@ -1,2 +1,4 @@
+# Windows
 gcc -shared -fPIC fun_add.c -o mat_add.dll
-#gcc -shared -fPIC fun_add.c -o mat_add.so
+# Linux
+gcc -shared -fPIC fun_add.c -o mat_add.so
