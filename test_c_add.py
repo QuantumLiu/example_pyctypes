@@ -5,7 +5,17 @@ def get_cfuncs():
     '''
     加载动态库，返回包装调用C函数的python函数
     '''
-    objdll = ctypes.CDLL('./mat_add.dll')#使用ctypes加载dll动态库
+
+    def get_platform():
+        '''
+        在Windows或Linux运行
+        '''
+        import sys
+        return (1 if 'win' in sys.platform else 2)
+
+    OPREATION_PLATFORM=get_platform()
+
+    objdll = ctypes.CDLL('./mat_add.dll' if OPREATION_PLATFORM==1 else './mat_add.so')#使用ctypes加载动态库
 
     def cfunc1(x, y):
         '''
