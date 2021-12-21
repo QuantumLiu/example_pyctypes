@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+//matAdd1 reference https://www.pythonheidong.com/blog/article/761228/958dfbbc06fa03410228/
 void matAdd1(const int ROW, const int COL, const int x[][COL], const int y[][COL], int z[][COL]){
     int i, j;
     for (i = 0; i < ROW; i++){
